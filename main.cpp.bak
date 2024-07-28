@@ -1,0 +1,105 @@
+#include <QApplication>
+#include <QPainter>
+#include <QVBoxLayout>
+#include <QWidget>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+using namespace std;
+std::string paint_srt;
+
+class CanvasWidget : public QWidget
+{
+public:
+	char **char_set;
+  int width, height;
+
+ protected:
+	void paintEvent(QPaintEvent *event) override
+	{
+		QPainter painter(this);
+
+		painter.setBrush(Qt::white);
+		painter.setFont(QFont("Ariel", 8));
+
+		for (int i = 0; i < width; i++)
+		{
+			for (int j = 0; j < height; j++)
+			{
+				painter.drawText(i * 10, j * 10, QString(char_set[i][j]));
+			}
+		}
+	}
+};
+
+static const char *light_levels = "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,\"^`\".";
+
+char** draw_ascii(int w, int h, Mat image);
+
+int main(int argc, char **argv)
+{
+	float scaleFactor = 1.0f / 8.0f;
+  int width, height;
+	Mat image;
+
+	image = imread("../Lenna_(test_image).png", cv::IMREAD_GRAYSCALE);
+	if (!image.data)
+	{
+		printf("No image data \n");
+		return -1;
+	}
+
+  width = image.cols;
+  height = image.rows;
+
+	int newWidth = static_cast<int>(image.cols * scaleFactor);
+	int newHeight = static_cast<int>(image.rows * scaleFactor);
+	cv::Size newSize(newWidth, newHeight);
+
+	// Downsample the image
+	cv::Mat downsampledImage;
+	cv::resize(image, downsampledImage, newSize, 0, 0, cv::INTER_AREA);
+
+	Mat newImage;
+	cv::resize(downsampledImage, newImage, Size(width, height));
+
+	char **char_set = draw_ascii(width, height, newImage);
+
+	QApplication app(argc, argv);
+
+	QWidget window;
+	window.setWindowTitle("ASCII");
+
+	CanvasWidget *canvas = new CanvasWidget();
+	canvas->setGeometry(20, 20, 200, 200);
+
+	QVBoxLayout *layout = new QVBoxLayout(&window);
+	layout->addWidget(canvas);
+	window.setLayout(layout);
+
+	window.resize(width, height);
+	window.show();
+
+	return app.exec();
+}
+
+char** draw_ascii(int w, int h, Mat image)
+{
+  char char_set[w][h];
+	// std::ofstream outFile("outfile.txt");
+
+	for (int i = 0; i < h; i++)
+	{
+		for (int j = 0; j < w; j++)
+		{
+			float pixelValue = static_cast<int>(image.at<uchar>(j, i)) / 255.0f;
+			char_set[i][j] = light_levels[(int)(pixelValue * 68)];
+		}
+		// outFile << "\n";
+	}
+
+	// outFile.close();
+  return char_set;
+}

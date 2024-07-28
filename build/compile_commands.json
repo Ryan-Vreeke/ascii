@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/ryan/source/ascii/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/ryan/source/ascii/include -isystem /usr/include/opencv4 -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/OpenCVProject.dir/main.cpp.o -c /home/ryan/source/ascii/main.cpp",
+  "file": "/home/ryan/source/ascii/main.cpp",
+  "output": "CMakeFiles/OpenCVProject.dir/main.cpp.o"
+},
+{
+  "directory": "/home/ryan/source/ascii/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/ryan/source/ascii/include -isystem /usr/include/opencv4 -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/OpenCVProject.dir/MainWindow.cpp.o -c /home/ryan/source/ascii/MainWindow.cpp",
+  "file": "/home/ryan/source/ascii/MainWindow.cpp",
+  "output": "CMakeFiles/OpenCVProject.dir/MainWindow.cpp.o"
+},
+{
+  "directory": "/home/ryan/source/ascii/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/ryan/source/ascii/include -isystem /usr/include/opencv4 -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/OpenCVProject.dir/Canvas.cpp.o -c /home/ryan/source/ascii/Canvas.cpp",
+  "file": "/home/ryan/source/ascii/Canvas.cpp",
+  "output": "CMakeFiles/OpenCVProject.dir/Canvas.cpp.o"
+},
+{
+  "directory": "/home/ryan/source/ascii/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/ryan/source/ascii/include -isystem /usr/include/opencv4 -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/OpenCVProject.dir/Pixel.cpp.o -c /home/ryan/source/ascii/Pixel.cpp",
+  "file": "/home/ryan/source/ascii/Pixel.cpp",
+  "output": "CMakeFiles/OpenCVProject.dir/Pixel.cpp.o"
+},
+{
+  "directory": "/home/ryan/source/ascii/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/ryan/source/ascii/include -isystem /usr/include/opencv4 -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/OpenCVProject.dir/include/moc_MainWindow.cpp.o -c /home/ryan/source/ascii/build/include/moc_MainWindow.cpp",
+  "file": "/home/ryan/source/ascii/build/include/moc_MainWindow.cpp",
+  "output": "CMakeFiles/OpenCVProject.dir/include/moc_MainWindow.cpp.o"
+},
+{
+  "directory": "/home/ryan/source/ascii/build",
+  "command": "/usr/bin/c++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/ryan/source/ascii/include -isystem /usr/include/opencv4 -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6 -isystem /usr/include/qt6/QtCore -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtGui -std=gnu++20 -mno-direct-extern-access -o CMakeFiles/OpenCVProject.dir/include/moc_Canvas.cpp.o -c /home/ryan/source/ascii/build/include/moc_Canvas.cpp",
+  "file": "/home/ryan/source/ascii/build/include/moc_Canvas.cpp",
+  "output": "CMakeFiles/OpenCVProject.dir/include/moc_Canvas.cpp.o"
+}
+]

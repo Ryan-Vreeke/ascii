@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+a97770f536f98b6e21de5e0c0db913b0 include/moc_Canvas.cpp
+18dd19e743220ec126cf0e81902d265b include/moc_MainWindow.cpp

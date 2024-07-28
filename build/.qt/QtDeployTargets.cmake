@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_OpenCVProject_FILE /home/ryan/source/ascii/build/OpenCVProject)
+set(__QT_DEPLOY_TARGET_OpenCVProject_TYPE EXECUTABLE)

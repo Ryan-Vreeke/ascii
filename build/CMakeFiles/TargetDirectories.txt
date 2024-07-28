@@ -1,0 +1,3 @@
+/home/ryan/source/ascii/build/CMakeFiles/OpenCVProject.dir
+/home/ryan/source/ascii/build/CMakeFiles/edit_cache.dir
+/home/ryan/source/ascii/build/CMakeFiles/rebuild_cache.dir
