@@ -966,9 +966,14 @@ CMakeFiles/OpenCVProject.dir/MainWindow.cpp.o: /home/ryan/source/ascii/MainWindo
   /usr/include/qt6/QtWidgets/QApplication \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/qt6/QtWidgets/qapplication.h \
+  /usr/include/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/qt6/QtWidgets/qlayout.h \
+  /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
@@ -2228,9 +2233,14 @@ CMakeFiles/OpenCVProject.dir/include/moc_MainWindow.cpp.o: include/moc_MainWindo
   /usr/include/qt6/QtWidgets/QApplication \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/qt6/QtWidgets/qapplication.h \
+  /usr/include/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/qt6/QtWidgets/qlayout.h \
+  /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
@@ -2861,9 +2871,14 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
   /usr/include/qt6/QtWidgets/QApplication \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QPushButton \
+  /usr/include/qt6/QtWidgets/QVBoxLayout \
   /usr/include/qt6/QtWidgets/QWidget \
   /usr/include/qt6/QtWidgets/qabstractbutton.h \
   /usr/include/qt6/QtWidgets/qapplication.h \
+  /usr/include/qt6/QtWidgets/qboxlayout.h \
+  /usr/include/qt6/QtWidgets/qgridlayout.h \
+  /usr/include/qt6/QtWidgets/qlayout.h \
+  /usr/include/qt6/QtWidgets/qlayoutitem.h \
   /usr/include/qt6/QtWidgets/qmainwindow.h \
   /usr/include/qt6/QtWidgets/qpushbutton.h \
   /usr/include/qt6/QtWidgets/qsizepolicy.h \
@@ -3030,6 +3045,10 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
 
 /usr/include/opencv4/opencv2/core/cvstd.inl.hpp:
 
+/usr/include/opencv4/opencv2/core/cuda_types.hpp:
+
+/usr/include/opencv4/opencv2/core/cuda.inl.hpp:
+
 /usr/include/c++/14.1.1/pstl/glue_algorithm_defs.h:
 
 /usr/include/opencv4/opencv2/stitching/detail/blenders.hpp:
@@ -3094,6 +3113,12 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
 
 /usr/include/qt6/QtGui/qguiapplication.h:
 
+/usr/include/opencv4/opencv2/core/matx.inl.hpp:
+
+/usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
+
+/usr/include/c++/14.1.1/climits:
+
 /usr/include/c++/14.1.1/bits/utility.h:
 
 /usr/include/qt6/QtCore/qelapsedtimer.h:
@@ -3107,8 +3132,6 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
 /usr/include/c++/14.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
 /usr/include/c++/14.1.1/iosfwd:
-
-/usr/include/c++/14.1.1/cwctype:
 
 /usr/include/qt6/QtCore/qcompare.h:
 
@@ -3314,6 +3337,12 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
 
 /usr/include/bits/types/error_t.h:
 
+/usr/include/opencv4/opencv2/core/utils/logger.defines.hpp:
+
+/usr/include/opencv4/opencv2/core/cvdef.h:
+
+/usr/include/qt6/QtCore/qstringalgorithms.h:
+
 /usr/include/qt6/QtGui/qfontinfo.h:
 
 /usr/include/c++/14.1.1/bits/enable_special_members.h:
@@ -3353,6 +3382,10 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
 /usr/include/qt6/QtCore/qnamespace.h:
 
 /usr/include/c++/14.1.1/bits/locale_conv.h:
+
+/usr/include/c++/14.1.1/cwctype:
+
+/usr/include/qt6/QtWidgets/qlayout.h:
 
 /usr/include/bits/fp-fast.h:
 
@@ -3512,12 +3545,6 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
 
 /usr/include/bits/timex.h:
 
-/usr/include/opencv4/opencv2/core/utils/logger.defines.hpp:
-
-/usr/include/qt6/QtCore/qstringalgorithms.h:
-
-/usr/include/opencv4/opencv2/core/cvdef.h:
-
 /usr/include/qt6/QtCore/qdarwinhelpers.h:
 
 /usr/include/opencv4/opencv2/core/mat.hpp:
@@ -3552,6 +3579,8 @@ CMakeFiles/OpenCVProject.dir/main.cpp.o: /home/ryan/source/ascii/main.cpp \
 
 /usr/include/bits/types/__locale_t.h:
 
+/usr/include/qt6/QtWidgets/qlayoutitem.h:
+
 /usr/include/bits/types/__sigset_t.h:
 
 /usr/include/qt6/QtGui/qguiapplication_platform.h:
@@ -3571,6 +3600,8 @@ include/moc_Canvas.cpp:
 /usr/include/qt6/QtWidgets/QApplication:
 
 /usr/include/bits/types/sigset_t.h:
+
+/usr/include/qt6/QtWidgets/qgridlayout.h:
 
 /usr/include/c++/14.1.1/bits/exception_defines.h:
 
@@ -4080,8 +4111,6 @@ include/moc_Canvas.cpp:
 
 /usr/include/strings.h:
 
-/usr/include/opencv4/opencv2/core/cuda.inl.hpp:
-
 /usr/include/sys/select.h:
 
 /usr/include/asm-generic/errno.h:
@@ -4120,6 +4149,8 @@ include/moc_Canvas.cpp:
 
 /usr/include/qt6/QtCore/qcoreapplication_platform.h:
 
+/usr/include/qt6/QtWidgets/QVBoxLayout:
+
 /usr/include/qt6/QtCore/qdeadlinetimer.h:
 
 /usr/include/c++/14.1.1/bits/uses_allocator.h:
@@ -4154,6 +4185,8 @@ include/moc_Canvas.cpp:
 
 /usr/include/qt6/QtWidgets/qabstractbutton.h:
 
+/usr/include/qt6/QtWidgets/qboxlayout.h:
+
 /usr/include/qt6/QtWidgets/qmainwindow.h:
 
 /usr/include/qt6/QtWidgets/qpushbutton.h:
@@ -4179,11 +4212,3 @@ include/moc_MainWindow.cpp:
 /usr/include/c++/14.1.1/locale:
 
 /usr/include/opencv4/opencv2/core/async.hpp:
-
-/usr/include/opencv4/opencv2/core/cuda_types.hpp:
-
-/usr/include/opencv4/opencv2/core/matx.inl.hpp:
-
-/usr/include/c++/14.1.1/climits:
-
-/usr/include/opencv4/opencv2/core/cv_cpu_dispatch.h:

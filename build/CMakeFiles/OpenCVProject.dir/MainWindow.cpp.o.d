@@ -387,8 +387,15 @@ CMakeFiles/OpenCVProject.dir/MainWindow.cpp.o: \
  /usr/include/qt6/QtWidgets/QPushButton \
  /usr/include/qt6/QtWidgets/qpushbutton.h \
  /usr/include/qt6/QtWidgets/qabstractbutton.h \
+ /usr/include/qt6/QtWidgets/QVBoxLayout \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtWidgets/qlayout.h \
+ /usr/include/qt6/QtWidgets/qlayoutitem.h \
+ /usr/include/qt6/QtWidgets/qboxlayout.h \
+ /usr/include/qt6/QtWidgets/qgridlayout.h \
  /home/ryan/source/ascii/include/Canvas.h \
  /usr/include/qt6/QtWidgets/QWidget /usr/include/qt6/QtWidgets/qwidget.h \
  /usr/include/qt6/QtGui/QPainter /usr/include/qt6/QtGui/qpainter.h \
  /usr/include/qt6/QtGui/qtextoption.h /usr/include/qt6/QtGui/qpen.h \
- /home/ryan/source/ascii/include/Pixel.h /usr/include/qt6/QtCore/qtypes.h
+ /home/ryan/source/ascii/include/Pixel.h /usr/include/qt6/QtCore/qtypes.h \
+ /usr/include/qt6/QtWidgets/qboxlayout.h

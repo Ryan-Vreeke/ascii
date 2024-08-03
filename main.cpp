@@ -1,79 +1,97 @@
 #include <QApplication>
+#include <cmath>
 #include <cstdlib>
 #include <memory>
+#include <numbers>
 #include <opencv2/core.hpp>
+#include <opencv2/highgui.hpp>
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/opencv.hpp>
+#include <opencv2/videoio.hpp>
 #include <string>
-#include <cmath>
 
 #include "MainWindow.h"
 #include "Pixel.h"
 
 using namespace std;
 
-const string& lightLevels = " .:-=+*#%@";
+const string &lightLevels = " .:-=+*#%@";
 const int res = 8;
-void drawAscii(cv::Mat image);
-
-void imageStuff()
-{
-	const string& imagePath = "../Lenna_(test_image).png";
-
-	const double scaleFactor = 1.0f / (float)res;
-	cv::Mat image = cv::imread(imagePath);
-	cv::Mat small;
-
-	cv::resize(image, small,
-						 cv::Size(image.cols * scaleFactor, image.rows * scaleFactor),
-						 cv::INTER_AREA);
-
-
-	drawAscii(small);
-	// cv::imshow("Loaded Image", image);
-	// cv::imshow("Downscaled Image", large);
-	// cv::waitKey(0);
-	// cv::destroyAllWindows();
-}
+void drawAscii(cv::Mat image, std::shared_ptr<std::vector<Pixel>> pixels);
+cv::Mat get_image(cv::Mat frame);
 
 std::unique_ptr<MainWindow> window;
 
-int main(int argc, char* argv[])
-{
-	QApplication app(argc, argv);
+int main(int argc, char *argv[]) {
+  QApplication app(argc, argv);
 
-	window = make_unique<MainWindow>();
+  auto pixels = make_shared<std::vector<Pixel>>();
+  window = make_unique<MainWindow>();
 
-	window->resize(1000, 1000);
-	window->show();
+  cv::VideoCapture cap("../test.mp4");
 
-	imageStuff();
+  if(!cap.isOpened())
+    printf("NOT OPEN");
+  
+  cv::Mat frame;
+  cap >> frame;
 
-	return app.exec();
+  window->resize(frame.size().width, frame.size().height);
+  window->show();
+
+  while (cap.isOpened()) {
+    cap >> frame;
+
+    if (frame.empty())
+      break;
+
+    cv::Mat image = get_image(frame);
+    drawAscii(image, pixels);
+
+    cv::imshow("Frame", image);
+    if (cv::waitKey(25) == 27) {
+      break;
+    }
+
+    window->sendData(*pixels);
+    pixels->clear();
+  }
+
+  cap.release();
+  cv::destroyAllWindows();
+  return 0;
+  // return app.exec();
 }
 
-void drawAscii(cv::Mat image)
-{
+void drawAscii(cv::Mat image, std::shared_ptr<std::vector<Pixel>> pixels) {
   cv::Mat gray;
   cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
+  cout << image.size() << endl;
 
-	std::vector<Pixel> pixels;
-	for (int i = 0; i < image.size().height; i++)
-	{
-		for (int j = 0; j < image.size().width; j++)
-		{
+  for (int i = 0; i < image.size().height; i++) {
+    for (int j = 0; j < image.size().width; j++) {
       cv::Vec3b pixel = image.at<cv::Vec3b>(j, i);
-			int lum = ((gray.at<uchar>(j, i) / 255.0f) * lightLevels.length());
+      int lum = ((gray.at<uchar>(j, i) / 255.0f) * lightLevels.length());
 
-			Pixel p{i * res, j * res, lightLevels[lum]}; 
+      Pixel p{i * res, j * res, lightLevels[lum]};
 
       p.b = pixel[0];
       p.g = pixel[1];
       p.r = pixel[2];
 
-			pixels.push_back(p);
-		}
-	}
+      pixels->push_back(p);
+    }
+  }
+}
 
-	window->sendData(pixels);
+cv::Mat get_image(cv::Mat frame) {
+
+  const double scaleFactor = 1.0f / (float)res;
+  cv::Mat small;
+
+  cv::resize(frame, small,
+             cv::Size(frame.cols * scaleFactor, frame.rows * scaleFactor),
+             cv::INTER_AREA);
+
+  return small;
 }
