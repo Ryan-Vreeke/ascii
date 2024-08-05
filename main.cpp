@@ -30,9 +30,9 @@ int main(int argc, char *argv[]) {
 
   cv::VideoCapture cap("../test.mp4");
 
-  if(!cap.isOpened())
+  if (!cap.isOpened())
     printf("NOT OPEN");
-  
+
   cv::Mat frame;
   cap >> frame;
 
@@ -48,32 +48,24 @@ int main(int argc, char *argv[]) {
     cv::Mat image = get_image(frame);
     drawAscii(image, pixels);
 
-    cv::imshow("Frame", image);
-    if (cv::waitKey(25) == 27) {
-      break;
-    }
-
     window->sendData(*pixels);
     pixels->clear();
   }
 
   cap.release();
-  cv::destroyAllWindows();
-  return 0;
-  // return app.exec();
+  return app.exec();
 }
 
 void drawAscii(cv::Mat image, std::shared_ptr<std::vector<Pixel>> pixels) {
   cv::Mat gray;
   cv::cvtColor(image, gray, cv::COLOR_BGR2GRAY);
-  cout << image.size() << endl;
 
   for (int i = 0; i < image.size().height; i++) {
     for (int j = 0; j < image.size().width; j++) {
-      cv::Vec3b pixel = image.at<cv::Vec3b>(j, i);
-      int lum = ((gray.at<uchar>(j, i) / 255.0f) * lightLevels.length());
+      cv::Vec3b pixel = image.at<cv::Vec3b>(i, j);
+      int lum = ((gray.at<uchar>(i, j) / 255.0f) * lightLevels.length());
 
-      Pixel p{i * res, j * res, lightLevels[lum]};
+      Pixel p{j * res, i * res, lightLevels[lum]};
 
       p.b = pixel[0];
       p.g = pixel[1];
@@ -86,11 +78,9 @@ void drawAscii(cv::Mat image, std::shared_ptr<std::vector<Pixel>> pixels) {
 
 cv::Mat get_image(cv::Mat frame) {
 
-  const double scaleFactor = 1.0f / (float)res;
   cv::Mat small;
 
-  cv::resize(frame, small,
-             cv::Size(frame.cols * scaleFactor, frame.rows * scaleFactor),
+  cv::resize(frame, small, cv::Size(frame.cols / res, frame.rows / res),
              cv::INTER_AREA);
 
   return small;
