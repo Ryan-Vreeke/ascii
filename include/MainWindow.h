@@ -11,7 +11,7 @@ class MainWindow : public QMainWindow
 	Q_OBJECT;
 
  public:
-	MainWindow();
+	MainWindow(int width, int heigth);
 
  private:
 	Canvas *m_canvas;

@@ -2,7 +2,6 @@
 
 
 Canvas::Canvas(QWidget *parent) : QWidget(parent) { 
-  setFixedSize(800, 800); 
 }
 
 void Canvas::paintEvent(QPaintEvent *event)
@@ -10,7 +9,7 @@ void Canvas::paintEvent(QPaintEvent *event)
 	QPainter painter(this);
 
 	painter.setBrush(Qt::black);
-  QFont font{"Ariel", 8};
+  QFont font{"Ariel", 6};
   painter.setFont(font);
 
   for(const auto& p : data){

@@ -1,22 +1,17 @@
 #include "MainWindow.h"
 #include "Pixel.h"
 
-MainWindow::MainWindow()
+MainWindow::MainWindow(int width, int height)
 {
   m_canvas = new Canvas(this);
 
 	setWindowTitle("Ascii V1");
+  this->resize(width, height);
+  m_canvas->resize(width, height);
+
   setCentralWidget(m_canvas);
 
   QObject::connect(this, &MainWindow::dataReady, m_canvas, &Canvas::handleData);
-
-	// QWidget *centralWidget = new QWidget(this);
-	// setCentralWidget(centralWidget);
-
-	// QPushButton *button = new QPushButton("Click", centralWidget);
-	// button->setGeometry(QRect(QPoint(100, 100), QSize(200, 50)));
-
-	// connect(button, &QPushButton::clicked, this, &QMainWindow::close);
 }
 
 void MainWindow::sendData(std::vector<Pixel> pixels){
